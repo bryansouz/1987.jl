@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    width: 48%;
+    margin-bottom: 20px;
+    background-color: lightblue;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.product img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Estilos para desktop */
+@media screen and (min-width: 768px) {
+    .product-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+    }
+    
+    .product {
+        width: 100%;
+        margin-bottom: 0;
+        background-color: lightgreen;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="product-container" style="background-color: black;">
+        <div class="product">
+            <img src="caminho-para-imagem-1.jpg" alt="Produto 1">
+            <!-- Outras informações sobre o produto 1 -->
+        </div>
+        <div class="product">
+            <img src="caminho-para-imagem-2.jpg" alt="Produto 2">
+            <!-- Outras informações sobre o produto 2 -->
+        </div>
+        <div class="product">
+            <img src="caminho-para-imagem-3.jpg" alt="Produto 3">
+            <!-- Outras informações sobre o produto 3 -->
+        </div>
+        <div class="product">
+            <img src="caminho-para-imagem-4.jpg" alt="Produto 4">
+            <!-- Outras informações sobre o produto 4 -->
+        </div>
+        <!-- Adicione mais divs com a classe "product" para exibir mais produtos em desktop -->
+    </div>
+</body>
+</html>

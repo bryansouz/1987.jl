@@ -1,0 +1,147 @@
+
+/* Estilos gerais */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para a navbar */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 999;
+}
+
+.navbar h1 {
+    color: #fff;
+    margin: 0;
+}
+
+.navbar button {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.navbar button:hover {
+    background-color: #ddd;
+    color: black;
+}
+/* Estilos para o carrinho de produtos */
+
+.navbar i { 
+
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar i:hover {
+    color: #ddd;
+}
+
+/* Estilos para o container de produtos */
+.product-container {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 20px 20px 20px;
+    margin-top: 60px;
+    align-items: start; /* Alinhar os produtos no topo */
+}
+
+
+
+.product {
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alinhar o conteúdo verticalmente */
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+.product:hover {
+    background-color: #f0f0f0;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    object-fit: cover; 
+    border-radius: 4px;
+
+}
+
+.product h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.product p {
+    font-size: 0.9rem;
+}
+
+.product button {
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product button:hover {
+    background-color: #555;
+}
+@media (min-width: 768px) {
+    .product-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+#cart-container {
+    background-color: lightgray;
+    padding: 20px;
+}
+
+#cart-container div {
+    margin-bottom: 10px;
+}
+
+#cart-container h3 {
+    margin-top: 0;
+}
+
+#cart-container button {
+    margin-top: 10px;
+}
+
+

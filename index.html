@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-fot6CmYtEJj4OXz7azCZfpJl4X+2j9Yx5zv6b3mm8d5a4jgqLJUJhZEr3xQuCwChSls7E86zn8Xj3oP7voMZ3Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="navbar">
+        <h1>1987.jl</h1>
+        <!-- Botão para abrir o modal -->
+        <button onclick="abrirModalCarrinho()">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+
+        <button onclick="enviarPedidoWhatsApp()">Enviar pedido via WhatsApp</button>
+    </div>
+
+    <div class="product-container" id="product-container"></div>
+    
+    <!-- Modal do carrinho -->
+    <div id="modal-carrinho" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModalCarrinho()">&times;</span>
+        <h2>Carrinho</h2>
+        <div id="cart-container"></div>
+        <button onclick="enviarPedidoWhatsApp()">Enviar pedido via WhatsApp</button>
+    </div>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/204bd3c859.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
