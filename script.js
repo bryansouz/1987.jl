@@ -82,7 +82,6 @@ const carrinho = [];
 
 function exibirCarrinho() {
     const modalCarrinho = document.getElementById("modal-carrinho");
-    modalCarrinho.style.display = "block";
   
     const containerCarrinho = document.getElementById("cart-container");
     containerCarrinho.innerHTML = "";
@@ -188,23 +187,52 @@ function enviarPedidoWhatsApp() {
 }
 
 function exibirProdutos() {
-    const containerProdutos = document.getElementById("product-container");
-    console.log(produtos.id);
-    produtos.forEach(produto => {
-        const divProduto = document.createElement("div");
-        divProduto.innerHTML = `
-            <div class="product">
-                <img src="${produto.imagem}" alt="${produto.nome}">
-                <h2>${produto.nome}</h2>
-                <p>R$ ${produto.preco.toFixed(2)}</p>
-                <button onclick="adicionarAoCarrinho(${produto.id})">Adicionar ao carrinho</button>
-            </div>
-            `;
-        containerProdutos.appendChild(divProduto);
-    });
+  const containerProdutos = document.getElementById("product-container");
+  console.log(produtos.id);
+  produtos.forEach(produto => {
+      const divProduto = document.createElement("div");
+      divProduto.innerHTML = `
+          <div class="product">
+              <img src="${produto.imagem}" alt="${produto.nome}">
+              <h2>${produto.nome}</h2>
+              <p>R$ ${produto.preco.toFixed(2)}</p>
+              <button onclick="adicionarAoCarrinho(${produto.id})">Adicionar ao carrinho</button>
+              <button onclick="exibirDetalhesDoProduto(${produto.id})">Ver detalhes</button>
+          </div>
+          `;
+          const modal = document.getElementById("myModal-detalhes")
+          const divdetalhes = document.createElement("div");
+          divdetalhes.innerHTML = `
+          <button onclick="adicionarAoCarrinho(${produto.id})">Adicionar ao carrinho</button>
+          `
+      containerProdutos.appendChild(divProduto);
+  });
 }
 
-  
+function exibirDetalhesDoProduto(id) {
+  const produto = produtos.find(p => p.id === id);
+  document.getElementById("modal-product-name").innerText = produto.nome;
+  document.getElementById("modal-product-image").src = produto.imagem;
+  document.getElementById("modal-product-description").innerText = produto.descricao;
+  document.getElementById("modal-product-price").innerText = "R$ " + produto.preco.toFixed(2);
+
+  // Mostrar o modal
+  const modal = document.getElementById("myModal-detalhes");
+  modal.style.display = "block";
+
+  // Adicionar um evento ao botão de fechar o modal
+  document.getElementsByClassName("close-detalhes")[0].onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // Fechar o modal ao clicar fora dele
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+}
+
 
 exibirProdutos();
 

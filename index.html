@@ -4,8 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="detalhe.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-fot6CmYtEJj4OXz7azCZfpJl4X+2j9Yx5zv6b3mm8d5a4jgqLJUJhZEr3xQuCwChSls7E86zn8Xj3oP7voMZ3Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    
 </head>
 <body>
     <div class="navbar">
@@ -18,7 +19,25 @@
         <button onclick="enviarPedidoWhatsApp()">Enviar pedido via WhatsApp</button>
     </div>
 
-    <div class="product-container" id="product-container"></div>
+    <div class="product-container" id="product-container">
+
+        <div id="myModal-detalhes" class="modal-detalhes">
+            <div class="modal-content-detalhes">
+                <div class="img">
+                   
+                    <img id="modal-product-image" src="" alt="">
+                </div>
+                <div class="descrpt">
+                    <h2 id="modal-product-name"></h2>
+                    <p id="modal-product-description"></p>
+                    <p id="modal-product-price"></p>
+                    <span class="close-detalhes">&times;</span>
+                </div>
+            </div>
+          </div>
+      
+       
+    </div>
     
     <!-- Modal do carrinho -->
     <div id="modal-carrinho" class="modal">
@@ -30,6 +49,7 @@
     </div>
     </div>
 
+    
 
     <script src="https://kit.fontawesome.com/204bd3c859.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
